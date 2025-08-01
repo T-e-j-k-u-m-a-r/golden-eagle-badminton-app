@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Eagle Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="assets/videos/badminton-bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Top Right Date/Time -->
+  <div style="position: fixed; top: 15px; right: 20px; color: white; text-align: right; font-size: 13px; font-family: 'Poppins', sans-serif;">
+    <div id="liveDateTime"></div>
+    <div id="lastLogin">Last login: Not available</div>
+  </div>
+
+  <!-- Login Form Container -->
+  <div class="login-container" id="loginSection">
+    <h1 class="title">Golden Eagle Badminton</h1>
+
+    <div class="toggle-buttons">
+      <button id="playerBtn" class="active">Player Login</button>
+      <button id="adminBtn">Admin Login</button>
+    </div>
+
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="loginTypeText">Logging in as <strong>Player</strong></p>
+    </form>
+
+    <div class="booking-info">
+      📲 Book your indoor court now! WhatsApp/Call: <strong>+91 98765 43210</strong> 🏸
+    </div>
+
+  </div>
+
+  <!-- Admin Welcome Message -->
+  <div id="adminWelcome" style="display: none; text-align: center; color: #fff; margin-top: 100px;">
+    <h1 style="font-size: 40px; font-weight: 600;">👨‍💼 Hello Admin!</h1>
+    <p style="font-size: 18px;">Welcome to the Golden Eagle Badminton admin panel.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p id="dateInfo"></p>
+    <p>© 2025 Golden Eagle Badminton 🏸 | All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
