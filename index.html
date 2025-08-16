@@ -16,9 +16,9 @@
   </video>
 
   <!-- Top Right Date/Time -->
-  <div style="position: fixed; top: 15px; right: 20px; color: white; text-align: right; font-size: 13px; font-family: 'Poppins', sans-serif;">
+  <div id="liveDateTimeWrapper">
     <div id="liveDateTime"></div>
-    <div id="lastLogin">Last login: Not available</div>
+    <div id="lastLoginInfo"></div>
   </div>
 
   <!-- Login Form Container -->
@@ -40,21 +40,78 @@
     <div class="booking-info">
       📲 Book your indoor court now! WhatsApp/Call: <strong>+91 98765 43210</strong> 🏸
     </div>
-
   </div>
 
-  <!-- Admin Welcome Message -->
-  <div id="adminWelcome" style="display: none; text-align: center; color: #fff; margin-top: 100px;">
-    <h1 style="font-size: 40px; font-weight: 600;">👨‍💼 Hello Admin!</h1>
-    <p style="font-size: 18px;">Welcome to the Golden Eagle Badminton admin panel.</p>
+  <!-- Admin Welcome -->
+  <div id="adminWelcome" style="display:none;">
+    <nav>
+      <span>🏸 Golden Eagle Admin</span>
+      <div>
+        <span>👨‍💼 Admin</span>
+        <button id="logoutBtn">🚪 Logout</button>
+      </div>
+    </nav>
+
+    <main>
+      <h1>Dashboard</h1>
+      <div class="admin-panel">
+        <h2>Daily Batch Overview</h2>
+        <div id="currentDate"></div>
+        <div id="adminBatchList"></div>
+
+        <h2 style="margin-top:40px;">📊 Full History (Month / Day)</h2>
+        <div id="adminFullHistory"></div>
+      </div>
+    </main>
   </div>
 
-  <!-- Footer -->
+  <!-- Player Setup Modal -->
+  <div id="playerSetupModal" style="display:none;">
+    <div class="modal-inner">
+      <h2>Game Setup</h2>
+      <label>Number of Players:
+        <input type="number" id="totalPlayersInput" min="1" max="8">
+      </label>
+      <div id="playerNamesInputs"></div>
+      <button id="startGameBtn">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Game Start Modal -->
+  <div id="gameStartModal" style="display:none;">
+    <div class="game-modal-inner">
+      <h1>🏸 Game Time! 🏸</h1>
+      <h2>Enjoy Your Game!</h2>
+      <p id="gameDuration">Calculating...</p>
+      <button id="endGameBtn">End Game & Logout</button>
+    </div>
+  </div>
+
+  <!-- Player Dashboard -->
+  <div id="playerDashboard" style="display:none;">
+    <h1>🏸 Welcome, <span id="playerName"></span>!</h1>
+    <div class="batch-info">
+      <h2>Current Batch Information</h2>
+      <p>Batch #: <span id="batchNumber"></span></p>
+      <p>Start Time: <span id="batchStartTime"></span></p>
+      <p>Total Players: <span id="totalPlayers"></span></p>
+
+      <h3>Players in this Batch</h3>
+      <div id="batchPlayersTable"></div>
+
+      <h3>Game History</h3>
+      <div id="playerGameHistory"></div>
+
+      <button id="playerLogoutBtn">End Game & Logout</button>
+    </div>
+  </div>
+
   <footer id="footer">
     <p id="dateInfo"></p>
     <p>© 2025 Golden Eagle Badminton 🏸 | All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/history.js"></script>
 </body>
 </html>
